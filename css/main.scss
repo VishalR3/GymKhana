@@ -1,0 +1,178 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    display: block;
+    position: relative;
+    justify-content: space-between;
+    padding:10px 15px;
+    top:0;
+    left:0;
+    right:0;
+    height:411px;
+    margin-bottom: 20px;
+    background: url("/Hero.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    a{
+        position: absolute;
+        top:10px;
+        right:20px;
+        color:white;
+    }
+}
+.main_nav{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:0;
+    width: 65%;
+    height:100%;
+    background-color: #1d0477;
+    padding-top:30%;
+    list-style-type: none;
+    color: white;
+    padding-left: 10%;
+    z-index:10;
+    opacity: 0;
+    transform: translateX(-100%);
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        line-height: 3;
+    }
+}
+.opened{
+    animation: slideopen 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes slideopen{
+    from{opacity: 0; 
+        transform: translateX(-100%);}
+    to{opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.closed{
+    animation: slideclose 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes slideclose{
+    from{ opacity: 1;
+        transform: translateX(0%);}
+    to{ opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+.slider_div{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x:contain;
+    scroll-snap-type: x mandatory;
+}
+.post{
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    height: 200px;
+    min-width: 70%;
+    margin-left: 15px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+    scroll-snap-align: start;
+    .image{
+        width:100%;
+        height:140px;
+        border-radius: 15px 15px 0 0;
+        background-color: #e6dfdf;
+    }
+    .info{
+        padding:10px;
+    }
+}
+.exercise{
+    position: relative;
+    margin-top: 15px;
+    background-color: #ececec;
+    height: 200px;
+    min-width: 40%;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+    scroll-snap-align: start;
+    .image{
+        width:100%;
+        height:140px;
+        border-radius: 15px 15px 0 0;
+        background-color: #e6dfdf;
+    }
+    p{
+        position: absolute;
+        top: 10px;
+        left:10px;
+        background-color: #2067ff;
+        color: #ffffff;
+        padding: 1px 10px;
+        border-radius: 10px;
+    }
+    h6{
+        margin-top: 15px;
+        font-weight: 700;
+    }
+}
+.workout{
+    position: relative;
+    margin-top: 15px;
+    background-color: #ececec;
+    height: 220px;
+    min-width: 220px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.25);
+    scroll-snap-align: start;
+    .week_plan{
+        position: absolute;
+        top:10px;
+        width:100%;
+        display: flex;
+        justify-content: space-around;
+        div{
+            display: inline-block;
+            width:25px !important;
+            height:25px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            border: 0.25px solid black;
+        }
+        div[stat='active']{
+            background-color: #21C113;
+        }
+        div[stat='inactive']{
+            background-color: #3693FF;
+        }
+    }
+    .image{
+        width:100%;
+        height:100%;
+        border-radius: 15px 15px 0 0;
+        background-color: #e6dfdf;
+    }
+    .info{
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        z-index: 10;
+        text-align: right;
+        h6{
+            font-weight: 700;
+        }
+    }
+}
