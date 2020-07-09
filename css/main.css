@@ -14,7 +14,7 @@ header {
   right: 0;
   height: 411px;
   margin-bottom: 20px;
-  background: url("/Hero.svg");
+  background: url("Hero.svg");
   background-repeat: no-repeat;
   background-position: bottom;
 }
